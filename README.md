@@ -1,2 +1,1 @@
-# koa2-ts
-koa2 typescript 
+koa2-ts
