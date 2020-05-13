@@ -19,7 +19,7 @@ fs.exists(UPLOAD_PATH, (exists) => {
 
 class FileController {
   public async MultiFile(ctx: Koa.Context) {
-    const file = ctx.request.files.fileName; // 文件名定义为fileName
+    const file = (ctx.request as any).files.fileName; // 文件名定义为fileName
     const reader: fs.ReadStream[] = [];
     const upStream: fs.WriteStream[] = [];
     const promise: Promise<boolean>[] = [];
@@ -49,7 +49,7 @@ class FileController {
   }
   public SingleFile(ctx: Koa.Context) {
     return new Promise((resolve: (value?: boolean | PromiseLike<boolean> | undefined) => void) => {
-      const { file } = ctx.request.files; // 文件name定义为file
+      const { file } = (ctx.request as any).files; // 文件name定义为file
       // 创建可读流
       const reader = fs.createReadStream(file.path);
       const filePath = UPLOAD_PATH + file.name;
