@@ -1,20 +1,19 @@
 {
-  "name": "visitor",
+  "name": "koa",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=development ts-node-dev src/app.ts",
+    "pro": "cross-env NODE_ENV=production ts-node ./src/app.ts",
     "lint": "tslint --project tsconfig.json --config tslint.json",
-    "fix": "tslint --fix -c tslint.json ./src/**/*.ts"
+    "fix": "tslint -c tslint.json ./src/**/*.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "config": "^3.3.1",
     "cross-env": "^7.0.2",
     "jsonwebtoken": "^8.5.1",
     "koa": "^2.11.0",
@@ -23,11 +22,14 @@
     "koa-json-error": "^3.1.2",
     "koa-parameter": "^3.0.1",
     "koa-router": "^8.0.8",
+    "koa-session": "^6.0.0",
     "koa-static": "^5.0.0",
     "koa2-cors": "^2.0.6",
     "log4js": "^6.2.1",
+    "moment": "^2.26.0",
     "mysql": "^2.18.1",
-    "typescript": "^3.9.2"
+    "typescript": "^3.9.2",
+    "uuid": "^8.0.0"
   },
   "devDependencies": {
     "@types/config": "0.0.36",
@@ -36,10 +38,13 @@
     "@types/koa-helmet": "^5.2.0",
     "@types/koa-json-error": "^3.1.2",
     "@types/koa-router": "^7.4.0",
+    "@types/koa-session": "^5.10.2",
     "@types/koa-static": "^4.0.1",
     "@types/koa2-cors": "^2.0.1",
     "@types/mysql": "^2.15.10",
     "@types/node": "^14.0.1",
+    "@types/uuid": "^8.0.0",
+    "dotenv": "^8.2.0",
     "ts-node-dev": "^1.0.0-pre.44"
   }
 }
